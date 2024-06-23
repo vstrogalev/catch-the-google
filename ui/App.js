@@ -8,15 +8,16 @@ import { Lose } from '../ui/pages/lose.js';
 
 const stateTransitions = {
   [_gameStatuses.PLAY]: Play,
-  [_gameStatuses.SETTINGS]: Settings, // renderSettings
-  [_gameStatuses.WIN]: Win, // renderWin
-  [_gameStatuses.LOSE]: Lose, // renderLose
+  [_gameStatuses.SETTINGS]: Settings,
+  [_gameStatuses.WIN]: Win,
+  [_gameStatuses.LOSE]: Lose,
 }
+
 export function App() {
   const gameStatus = getGameStatus();
 
-  const element = createNode('div');
+  const element = createNode('div', 'app');
   const renderElement = stateTransitions[gameStatus]();
-  element.append(renderElement);
+  element.appendChild(renderElement);
   return element
 }

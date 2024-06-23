@@ -1,0 +1,11 @@
+.settings__container {
+  position: relative;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.settings__item {
+  
+}

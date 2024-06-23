@@ -8,7 +8,7 @@
  */
 export function createNode(tag, className, content, src, alt) {
   const node = document.createElement(tag);
-  className && node.classList.add(className);
+  className && node.classList.add(...className.split(' '));
 
   if (content || content === '0' || content === 0) {
     node.textContent = content;

@@ -22,8 +22,15 @@ const _initialState = {
 
 let _state = {..._initialState};
 
+let _Observer = () => {};
+
+export function subscribe(cb) {
+  _Observer = cb;
+}
+
 export function resetGame() {
   _state = {..._initialState};
+  _Observer();
 }
 
 export function getPoints() {
@@ -49,4 +56,16 @@ export function getGooglePosition() {
     x: _state.googlePosition.x,
     y: _state.googlePosition.y
   }
+}
+
+export function getPointsTo() {
+  return {
+    pointsToWin: _state.settings.pointsToWin,
+    pointsToLose: _state.settings.pointsToLose
+  }
+}
+
+export function setStatus(newStatus) {
+  _state.gameStatus = newStatus;
+  _Observer();
 }
