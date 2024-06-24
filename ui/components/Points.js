@@ -1,12 +1,7 @@
 import { getPoints } from "../../data/data.js";
-import { createNode } from "../../utils/createNode.js"
-import { Button } from "../components/Button.js";
+import { createNode } from "../../utils/createNode.js";
 
-export function Lose() {
-  const element = createNode('div');
-  const title = createNode('h2', '', 'You Lose!');
-  const description = createNode('p', '', "You'll be lucky next time");
-
+export function Points() {
   const points = getPoints()
   const pointsContainer = createNode('div', 'points__container');
 
@@ -21,11 +16,5 @@ export function Lose() {
   pointsMissRow.append(pointsMissTitle, pointsMissData);
 
   pointsContainer.append(pointsCatchRow, pointsMissRow);
-
-  const button = Button('Play again', () => {
-    resetGame();
-  });
-
-  element.append(title, description, pointsContainer, button);
-  return element
+  return pointsContainer;
 }

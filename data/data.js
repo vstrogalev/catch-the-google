@@ -17,7 +17,7 @@ const _initialState = {
     x: 0,
     y: 0
   },
-  gameStatus: _gameStatuses.SETTINGS
+  gameStatus: _gameStatuses.PLAY
 }
 
 let _state = {..._initialState};

@@ -4,3 +4,5 @@ export const _gameStatuses = {
   LOSE: 'lose',
   SETTINGS: 'settings'
 }
+
+export const _gridItemSize = 85;
